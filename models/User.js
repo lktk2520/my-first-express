@@ -1,22 +1,18 @@
 const mongoose = require('mongoose');
 
-// 1. 定義 Schema (類似 TypeScript Interface)
-// 這裡限制了資料庫只能存什麼欄位
-const userSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   username: {
     type: String,
-    required: true, // 必填
-    unique: true    // 不可重複
+    required: true,
+    unique: true, // 確保帳號不重複
+    min: 6
   },
   password: {
     type: String,
-    required: true
+    required: true,
+    min: 6
   },
-  level: {
-    type: String,
-    default: 'Normal' // 預設值
-  },
-  createdAt: {
+  date: {
     type: Date,
     default: Date.now
   }

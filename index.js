@@ -4,9 +4,12 @@ const mongoose = require('mongoose'); // 引入 mongoose
 const express = require('express');
 const vipRouter = require('./routes/vip'); //引入路由模組
 const userRouter = require('./routes/users');
+const cors = require('cors'); // [新增] 引入套件
 
 
 const app = express();
+
+app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000; // [修改] 改讀變數
