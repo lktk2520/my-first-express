@@ -6,7 +6,7 @@ const checkAuth = (req, res, next) => {
     req.user = { name: 'Frontend Master', level: 99 };
     next();
   } else {
-    res.status(401).json({ error: '權限不足，請滾' });
+    res.status(401).json({ error: '權限不足' });
   }
 };
 
