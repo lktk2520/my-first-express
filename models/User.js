@@ -20,6 +20,6 @@ const UserSchema = new mongoose.Schema({
 
 // 2. 建立 Model
 // 'User' 會對應到資料庫裡的 'users' 集合 (Collection)
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
