@@ -4,6 +4,7 @@ const mongoose = require('mongoose'); // 引入 mongoose
 const express = require('express');
 const vipRouter = require('./routes/vip'); //引入路由模組
 const userRouter = require('./routes/users');
+const itemsRouter = require('./routes/items')
 const cors = require('cors'); // [新增] 引入套件
 
 
@@ -32,6 +33,8 @@ app.use('/api/vip', vipRouter);
 // 所以這裡掛在 '/api' 下面即可
 // 組合起來變成： /api + /register = /api/register
 app.use('/api', userRouter);
+
+app.use('/api/items', itemsRouter);
 
 // ... (原本的 app.listen 不用動) ...
 app.listen(PORT, () => {
